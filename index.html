@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 
 <meta itemprop="name" content="旺娃子的驾考伴侣">
-<meta itemprop="description" content="驾考大捷！">
+<meta itemprop:description" content="驾考大捷！">
 <meta itemprop:image" content="https://huyi7527.github.io/jk/cover.png">
 
 <style>
@@ -30,7 +30,6 @@
   --smooth: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 8套主题 */
 body.theme-1 { --bg:#f9fdff; --card:#ffffff; --main:#64a6ff; --sub:#a1caff; --text:#2d3748; --gray:#f2f7fc; }
 body.theme-2 { --bg:#fff9fc; --card:#ffffff; --main:#f89cc1; --sub:#ffc8e0; --text:#4a3b44; --gray:#fef2f8; }
 body.theme-3 { --bg:#faf9ff; --card:#ffffff; --main:#ab8ffb; --sub:#d4c4ff; --text:#3b2f5f; --gray:#f6f2ff; }
@@ -47,7 +46,6 @@ body {
   padding-bottom: 90px;
 }
 
-/* 登录页 */
 .login {
   position: fixed; top:0; left:0; width:100vw; height:100vh;
   background: var(--main); display:flex; flex-direction:column;
@@ -84,7 +82,6 @@ body {
 .login-btn:active { transform:scale(0.96); }
 .login-copy { margin-top:24px; color:white; font-size:12px; opacity:0.95; text-align:center; }
 
-/* 登录提示框 */
 .toast {
   position:fixed; top:120px; left:50%; transform:translateX(-50%);
   background:rgba(0,0,0,0.7); color:#fff; padding:10px 16px; border-radius:12px;
@@ -92,7 +89,6 @@ body {
 }
 .toast.show { opacity:1; }
 
-/* 成功上岸 + 烟花竖版 */
 .success-fire {
   position:fixed; top:0; left:0; width:100vw; height:100vh;
   background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center;
@@ -111,7 +107,6 @@ body {
 }
 @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
-/* 头部 */
 .header {
   background:var(--main); color:white; padding:24px 16px; text-align:center;
   position:relative; border-bottom-left-radius:32px; border-bottom-right-radius:32px;
@@ -129,7 +124,6 @@ body {
 .time { font-size:12px; margin-top:4px; opacity:0.9; }
 .music-btn { position:absolute; right:16px; top:50%; transform:translateY(-50%); }
 
-/* 主题弹窗 */
 .theme-modal {
   position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4);
   display:none; align-items:center; justify-content:center; z-index:998;
@@ -149,7 +143,6 @@ body {
 .t1{background:#64a6ff;} .t2{background:#f89cc1;} .t3{background:#ab8ffb;} .t4{background:#ffb278;}
 .t5{background:#57d4ad;} .t6{background:#f9c880;} .t7{background:#6bd4e0;} .t8{background:#e57b8f;}
 
-/* 导航 */
 .nav {
   display:flex; background:var(--card); margin:18px; border-radius:var(--card-radius);
   overflow:hidden; box-shadow:var(--shadow);
@@ -160,12 +153,10 @@ body {
 }
 .nav-item.active { background:var(--gray); color:var(--main); transform:scale(1.03); }
 
-/* 内容区域 */
 .content { padding:0 16px; }
 .page { display:none; }
 .page.show { display:block; animation:fadeIn 0.4s; }
 
-/* 科目一~四 主题背景色板块 */
 .card {
   background:var(--card); border-radius:var(--card-radius); padding:26px; margin-bottom:18px;
   box-shadow:var(--shadow); transition:var(--smooth); position:relative; overflow:hidden;
@@ -192,7 +183,6 @@ body {
 .table th, .table td { border:1px solid #eee; padding:10px; text-align:center; }
 .table th { background:var(--gray); font-weight:600; }
 
-/* 底部 */
 .footer {
   position:fixed; bottom:0; left:0; width:100%; background:var(--card);
   text-align:center; padding:14px; font-size:12px; color:#666;
@@ -200,82 +190,184 @@ body {
 }
 .footer span { color:var(--main); cursor:pointer; margin-left:6px; }
 
-/* AI智能客服 */
-.ai-btn {
-  position:fixed; right:16px; bottom:80px; width:52px; height:52px;
-  border-radius:50%; background:var(--main); color:#fff; font-size:22px;
-  border:none; box-shadow:0 6px 16px rgba(0,0,0,0.15); cursor:pointer;
-  z-index:996; transition:var(--smooth);
+/* ========== 新版 AI 客服：好看 + 动态 + 关闭 + 发送按钮 ========== */
+.ai-float {
+  position: fixed;
+  right: 18px;
+  bottom: 80px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--main);
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 99;
+  transition: all 0.3s ease;
+  animation: floatAni 2s infinite ease-in-out;
 }
-.ai-btn:hover { transform:scale(1.1); }
-.ai-modal {
-  position:fixed; bottom:0; left:0; width:100%; height:85vh;
-  background:var(--card); border-radius:24px 24px 0 0;
-  box-shadow:0 -10px 30px rgba(0,0,0,0.1); z-index:997;
-  transform:translateY(100%); transition:0.4s ease-out; padding:24px;
+@keyframes floatAni {
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
 }
-.ai-modal.show { transform:translateY(0); }
-.ai-header {
-  font-size:18px; font-weight:600; color:var(--main); text-align:center; margin-bottom:20px;
+.ai-float:hover { transform: scale(1.1); }
+
+.ai-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
-.ai-chat {
-  height:calc(100% - 100px); overflow-y:auto; padding-right:8px;
-}
-.ai-bubble {
-  background:var(--gray); padding:12px 14px; border-radius:16px;
-  margin-bottom:12px; max-width:80%; font-size:14px;
-}
-.ai-input {
-  width:100%; padding:14px; border-radius:16px; border:1px solid #eee;
-  background:var(--bg); margin-top:12px; font-size:14px;
+.ai-modal-bg.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* 声明弹窗 */
-.declare-modal {
+.ai-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85vh;
+  background: var(--card);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px;
+}
+.ai-modal.show {
+  transform: translateY(0);
+}
+
+.ai-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.ai-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--main);
+}
+.ai-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gray);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text);
+  transition: 0.2s;
+}
+.ai-close:hover {
+  background: var(--sub);
+  color: #fff;
+}
+
+.ai-chat-box {
+  height: calc(100% - 110px);
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-bubble {
+  max-width: 80%;
+  padding: 12px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: bubbleIn 0.3s forwards;
+}
+@keyframes bubbleIn {
+  from { opacity:0; transform: translateY(8px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+.ai-bot {
+  align-self: flex-start;
+  background: var(--gray);
+  border-bottom-left-radius: 6px;
+}
+.ai-user {
+  align-self: flex-end;
+  background: var(--sub);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.ai-input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.ai-input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 24px;
+  border: 1px solid #eee;
+  background: var(--bg);
+  font-size: 14px;
+  outline: none;
+}
+.ai-input:focus {
+  border-color: var(--main);
+}
+.ai-send {
+  padding: 0 20px;
+  border-radius: 24px;
+  background: var(--main);
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.ai-send:hover {
+  transform: scale(1.05);
+}
+
+/* ========== 声明 & 作者 ========== */
+.declare-modal, .author-modal {
   position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5);
   display:none; align-items:center; justify-content:center; z-index:997;
 }
-.declare-modal.show { display:flex; }
-.declare-box {
+.declare-modal.show, .author-modal.show { display:flex; }
+.declare-box, .author-box {
   width:90%; max-width:350px; background:var(--card); border-radius:var(--radius);
   padding:32px 26px; box-shadow:var(--shadow);
 }
 .declare-box p { font-size:15px; line-height:1.85; margin-bottom:10px; }
-.declare-btn {
+.declare-btn, .author-btn {
   margin-top:22px; width:100%; padding:16px; border-radius:14px; border:none;
   background:var(--main); color:white; font-weight:600; cursor:pointer;
-}
-
-/* 关于作者 */
-.author-modal {
-  position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5);
-  display:none; align-items:center; justify-content:center; z-index:997;
-}
-.author-modal.show { display:flex; }
-.author-box {
-  background:var(--card); border-radius:24px; padding:36px 30px;
-  width:90%; max-width:340px; text-align:center;
-}
-.author-box h3 { margin-bottom:16px; color:var(--main); }
-.author-box p { font-size:15px; line-height:1.8; margin-bottom:6px; }
-.author-btn {
-  margin-top:20px; padding:12px 24px; border-radius:14px; border:none;
-  background:var(--main); color:#fff; cursor:pointer;
 }
 </style>
 </head>
 
 <body class="theme-2">
 
-<!-- 提示框 -->
 <div class="toast" id="toast"></div>
 
-<!-- 成功上岸烟花 -->
 <div class="success-fire" id="successFire">
   <div class="fire-text">成功上岸</div>
 </div>
 
-<!-- 登录 -->
 <div class="login" id="login">
   <div class="login-cover" id="coverBox"></div>
   <input type="file" id="uploadCover" accept="image/*" style="display:none;">
@@ -289,7 +381,6 @@ body {
   <div class="login-copy">版权所有© 2026 旺娃子的驾考伴侣 | 网页开发者：胡燚</div>
 </div>
 
-<!-- 主界面 -->
 <div id="main" style="display:none;">
   <div class="header">
     <div class="header-left">
@@ -301,7 +392,6 @@ body {
     <button class="icon-btn music-btn" id="musicIcon" onclick="toggleMusic()" title="音乐">🎵</button>
   </div>
 
-  <!-- 主题选择 -->
   <div class="theme-modal" id="themeModal">
     <div class="theme-box">
       <h3>选择主题风格</h3>
@@ -326,7 +416,6 @@ body {
   </div>
 
   <div class="content">
-    <!-- 科目一 -->
     <div class="page show" id="page1">
       <div class="card">
         <h3>科目一 · 道路交通安全法律、法规和相关知识</h3>
@@ -373,7 +462,6 @@ body {
       </div>
     </div>
 
-    <!-- 科目二 -->
     <div class="page" id="page2">
       <div class="card">
         <h3>科目二 · 场地驾驶技能考试</h3>
@@ -404,7 +492,6 @@ body {
       </div>
     </div>
 
-    <!-- 科目三 -->
     <div class="page" id="page3">
       <div class="card">
         <h3>科目三 · 道路驾驶技能考试</h3>
@@ -470,7 +557,6 @@ body {
       </div>
     </div>
 
-    <!-- 科目四 -->
     <div class="page" id="page4">
       <div class="card">
         <h3>科目三 · 安全文明驾驶常识考试（官方叫法）</h3>
@@ -504,16 +590,23 @@ body {
     </div>
   </div>
 
-  <!-- AI客服按钮 -->
-  <button class="ai-btn" onclick="openAI()">🤖</button>
+  <!-- AI 悬浮按钮 -->
+  <button class="ai-float" onclick="openAI()">🤖</button>
 
-  <!-- AI客服面板 -->
+  <!-- AI 客服弹窗 -->
+  <div class="ai-modal-bg" id="aiModalBg" onclick="closeAI()"></div>
   <div class="ai-modal" id="aiModal">
-    <div class="ai-header">AI 智能客服</div>
-    <div class="ai-chat" id="aiChat">
-      <div class="ai-bubble">你好呀～我是胡主人研发的驾考AI助手，有问题都可以问我哦！</div>
+    <div class="ai-header-bar">
+      <div class="ai-title">AI 智能驾考助手</div>
+      <button class="ai-close" onclick="closeAI()">×</button>
     </div>
-    <input class="ai-input" id="aiInput" placeholder="输入你要问的问题..." onkeydown="if(event.key=='Enter')sendAI()">
+    <div class="ai-chat-box" id="aiChat">
+      <div class="ai-bubble ai-bot">你好～我是胡主人研发的AI驾考助手，你可以问我科目一到四，也可以问我【网站功能】哦！</div>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" id="aiInput" placeholder="输入问题..." onkeydown="if(event.key=='Enter')sendAI()">
+      <button class="ai-send" onclick="sendAI()">发送</button>
+    </div>
   </div>
 
   <div class="footer">
@@ -523,7 +616,6 @@ body {
   </div>
 </div>
 
-<!-- 声明 -->
 <div class="declare-modal" id="declareModal">
   <div class="declare-box">
     <h3>重要声明</h3>
@@ -537,7 +629,6 @@ body {
   </div>
 </div>
 
-<!-- 关于作者 -->
 <div class="author-modal" id="authorModal">
   <div class="author-box">
     <h3>关于作者</h3>
@@ -558,7 +649,7 @@ document.getElementById('uploadCover').onchange = e=>{
   if(f) document.getElementById('coverBox').style.backgroundImage = `url(${URL.createObjectURL(f)})`;
 };
 
-// 提示框
+// 提示
 function showTip(text){
   let t = document.getElementById('toast');
   t.innerText = text;
@@ -586,7 +677,6 @@ function doLogin(){
   }
 }
 
-// 返回登录
 function goBackLogin(){
   document.getElementById('main').style.display = 'none';
   document.getElementById('login').style.display = 'flex';
@@ -623,7 +713,7 @@ function examCount(){
 }
 setInterval(examCount,1000); examCount();
 
-// 切换页面
+// 页面切换
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
   document.getElementById('page'+n).classList.add('show');
@@ -642,34 +732,68 @@ function toggleMusic(){
   isPlay = !isPlay;
 }
 
-// 声明
+// 声明 & 作者
 function showDeclare(){ document.getElementById('declareModal').classList.add('show') }
 function closeDeclare(){ document.getElementById('declareModal').classList.remove('show') }
-
-// 作者
 function showAuthor(){ document.getElementById('authorModal').classList.add('show') }
 function closeAuthor(){ document.getElementById('authorModal').classList.remove('show') }
 
-// AI客服
-function openAI(){ document.getElementById('aiModal').classList.add('show') }
-function sendAI(){
-  let i = document.getElementById('aiInput');
-  let v = i.value.trim();
-  if(!v) return;
-  let chat = document.getElementById('aiChat');
-  chat.innerHTML += `<div class="ai-bubble" style="margin-left:auto; background:var(--sub);">${v}</div>`;
-  i.value = '';
-  setTimeout(()=>{
+// ================== 新版 AI 客服逻辑 ==================
+function openAI() {
+  document.getElementById('aiModalBg').classList.add('show');
+  document.getElementById('aiModal').classList.add('show');
+}
+function closeAI() {
+  document.getElementById('aiModalBg').classList.remove('show');
+  document.getElementById('aiModal').classList.remove('show');
+}
+
+function sendAI() {
+  const input = document.getElementById('aiInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const chat = document.getElementById('aiChat');
+  chat.innerHTML += `<div class="ai-bubble ai-user">${text}</div>`;
+  input.value = '';
+  chat.scrollTop = chat.scrollHeight;
+
+  setTimeout(() => {
     let ans = '';
-    if(/科目一|科一/.test(v)) ans = '科目一考法规和信号灯，90分合格，考完记得签字哦～';
-    else if(/科目二|科二/.test(v)) ans = '科目二五项，80分合格，慢点开准点位，合格要签字';
-    else if(/科目三|科三/.test(v)) ans = '科目三道路驾驶，90分合格，灯光别错，合格签字';
-    else if(/科目四|科四/.test(v)) ans = '科目四考文明安全，90分合格，多选题仔细，合格签字领证';
-    else if(/胡主人|作者/.test(v)) ans = '我是胡主人精心研发的AI驾考助手，专门为你服务哒';
-    else ans = '我是胡主人研发的驾考AI，你可以问我科目一到四相关问题哦';
-    chat.innerHTML += `<div class="ai-bubble">${ans}</div>`;
+    const t = text.toLowerCase();
+
+    // 介绍网站功能
+    if (t.includes('网站') || t.includes('功能') || t.includes('平台') || t.includes('能干什么')) {
+      ans = '本网站是「旺娃子驾考伴侣」，可以帮你：① 查看科目一到四完整考试内容、合格标准、注意事项；② 实时考试倒计时；③ 8套主题自由切换；④ 模拟考试通知；⑤ 智能AI解答驾考问题；⑥ 登录保护，界面美观好用，助你顺利上岸！';
+    }
+    else if (t.includes('科目一') || t.includes('科一')) {
+      ans = '科目一考交通法规、信号灯、交警手势，100题，90分合格，一定要带身份证，考完必须签字！';
+    }
+    else if (t.includes('科目二') || t.includes('科二')) {
+      ans = '科目二考倒车入库、侧方停车、坡道、直角、S弯，80分合格，慢一点更稳，合格要签字。';
+    }
+    else if (t.includes('科目三') || t.includes('科三')) {
+      ans = '科目三是路考+灯光模拟，90分合格，灯光别错，转向灯要3秒，靠边停车30cm，合格签字。';
+    }
+    else if (t.includes('科目四') || t.includes('科四')) {
+      ans = '科目四考安全文明，50题含多选题，90分合格，多选题最容易丢分，考完签字拿证。';
+    }
+    else if (t.includes('签字') || t.includes('签名')) {
+      ans = '科目一、二、三、四合格后都必须现场签字，不签成绩无效，一定要记得！';
+    }
+    else if (t.includes('胡主人') || t.includes('作者') || t.includes('研发')) {
+      ans = '我是胡主人精心研发的AI驾考助手，整个网站也是胡主人专业定制开发的哦～';
+    }
+    else if (t.includes('加油') || t.includes('必过') || t.includes('上岸')) {
+      ans = '加油！放平心态，认真准备，你一定能一把过，顺利拿证上岸！';
+    }
+    else {
+      ans = '我是胡主人精心研发的AI驾考助手，你可以问我科目一/二/三/四、考试流程、签字要求，也可以问我【网站功能】哦！';
+    }
+
+    chat.innerHTML += `<div class="ai-bubble ai-bot">${ans}</div>`;
     chat.scrollTop = chat.scrollHeight;
-  },600);
+  }, 700);
 }
 </script>
 </body>
