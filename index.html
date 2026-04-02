@@ -437,7 +437,7 @@ body {
   <input type="file" id="uploadCover" accept="image/*" style="display:none;">
 
   <div class="login-card">
-    <h2>旺娃子的驾考伴侣（测试版本）</h2>
+    <h2>旺娃子的驾考伴侣（测试版）</h2>
     <div class="login-tip">默认账号：旺娃子　密码：888888</div>
     <input type="text" id="user" placeholder="请输入账号" value="旺娃子">
     <input type="password" id="pwd" placeholder="请输入密码">
@@ -487,7 +487,7 @@ body {
         <h3>科目一 · 道路交通安全法律、法规和相关知识</h3>
         <div class="countdown" id="examCount"></div>
         <div class="sms">
-【湖北交警】您已成功预约十堰郧县金达考场04月07日郧县金达考场07:00至11:00的科目一考试，请携带身份证明按时参加考试。如有特殊情况，请提前一日申请取消预约。
+@十堰郧县驾校-李旺：【湖北交警】您已成功预约十堰郧县金达考场04月07日郧县金达考场07:00至11:00的科目一考试，请携带身份证明按时参加考试。如有特殊情况，请提前一日申请取消预约。
         </div>
         <div class="note">
 <strong>一、考试基本信息</strong><br>
@@ -662,7 +662,7 @@ body {
 <p>3. 本网站内展示的短信、通知等均为模拟演示，不代表官方文件。</p>
 <p>4. 未经许可，任何单位及个人不得复制、分发或用于商业用途。</p>
 <p>5. 用户使用本网站即视为已阅读并同意本声明全部条款。</p>
-<p>6. 本网站研发者：胡燚，版权所有，侵权必究。</p>
+<p>6. 本网站研发由胡燚等团队成员专业定制，版权所有，侵权必究。</p>
     <button class="declare-btn" onclick="closeDeclare()">我已阅读并同意</button>
   </div>
 </div>
@@ -747,7 +747,7 @@ function examCountdown() {
   let m = Math.floor((diff % 3600000) / 60000);
   let s = Math.floor((diff % 60000) / 1000);
   document.getElementById('examCount').innerText = 
-    `距离考试：${day}天 ${h}时 ${m}分 ${s}秒`;
+    `距离20260407考试：${day}天 ${h}时 ${m}分 ${s}秒`;
 }
 setInterval(examCountdown, 1000);
 examCountdown();
