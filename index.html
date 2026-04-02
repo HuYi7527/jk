@@ -1,6 +1,22 @@
-<meta charset="UTF-8<meta name="viewport" content="width=device-width, initial-scale=1.旺娃子的驾考伴侣<link rel="icon" href="cover.png" type="image/png<meta property="og:title" content="旺娃子的驾考伴侣<meta property="og:description" content="驾<meta property="og:image" content="https://huyi7527.github.io/jk/cover.png"><meta property="og:url" content="https://huyi7527.github.io/jk/">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旺娃子的驾考伴侣</title>
+<link rel="icon" href="cover.png" type="image/png">
+
+<meta property="og:title" content="旺娃子的驾考伴侣">
+<meta property="og:description" content="驾考大捷！">
+<meta property="og:image" content="https://huyi7527.github.io/jk/cover.png">
+<meta property="og:url" content="https://huyi7527.github.io/jk/">
 <meta property="og:type" content="website">
-<meta itemprop="name" content="旺娃子的驾<meta itemprop="description" content="驾<meta itemprop:image" content="https://huyi7527.github.io/jk<style>
+
+<meta itemprop="name" content="旺娃子的驾考伴侣">
+<meta itemprop="description" content="驾考大捷！">
+<meta itemprop:image" content="https://huyi7527.github.io/jk/cover.png">
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +30,7 @@
   --smooth: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 8套主题配色 */
+/* 8套主题 */
 body.theme-1 { --bg:#f9fdff; --card:#ffffff; --main:#64a6ff; --sub:#a1caff; --text:#2d3748; --gray:#f2f7fc; }
 body.theme-2 { --bg:#fff9fc; --card:#ffffff; --main:#f89cc1; --sub:#ffc8e0; --text:#4a3b44; --gray:#fef2f8; }
 body.theme-3 { --bg:#faf9ff; --card:#ffffff; --main:#ab8ffb; --sub:#d4c4ff; --text:#3b2f5f; --gray:#f6f2ff; }
@@ -31,7 +47,7 @@ body {
   padding-bottom: 90px;
 }
 
-/* 登录页面样式 */
+/* 登录页 */
 .login {
   position: fixed; top:0; left:0; width:100vw; height:100vh;
   background: var(--main); display:flex; flex-direction:column;
@@ -68,15 +84,15 @@ body {
 .login-btn:active { transform:scale(0.96); }
 .login-copy { margin-top:24px; color:white; font-size:12px; opacity:0.95; text-align:center; }
 
-/* 登录提示弹窗 */
+/* 登录提示框 */
 .toast {
   position:fixed; top:120px; left:50%; transform:translateX(-50%);
   background:rgba(0,0,0,0.7); color:#fff; padding:10px 16px; border-radius:12px;
   font-size:14px; z-index:1001; opacity:0; transition:0.3s;
 }
-.toast.show { opacity:1; top:100px; }
+.toast.show { opacity:1; }
 
-/* 成功上岸竖版烟花渐隐效果 */
+/* 成功上岸 + 烟花竖版 */
 .success-fire {
   position:fixed; top:0; left:0; width:100vw; height:100vh;
   background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center;
@@ -84,18 +100,18 @@ body {
 }
 .success-fire.show { display:flex; }
 .fire-text {
-  writing-mode:vertical-rl; font-size:58px; font-weight:900;
-  color:#fff; text-shadow:0 0 20px var(--main), 0 0 40px var(--main), 0 0 60px #fff;
-  letter-spacing:15px; animation:upFade 1.5s ease-out forwards;
+  writing-mode:vertical-rl; font-size:52px; font-weight:900;
+  color:#fff; text-shadow:0 0 20px var(--main), 0 0 40px var(--main);
+  letter-spacing:12px; animation:upFade 1.2s ease-out forwards;
 }
 @keyframes upFade {
-  0%{transform:translateY(80px); opacity:0;}
-  60%{opacity:1; transform:translateY(0);}
-  100%{transform:translateY(-20px); opacity:0;}
+  0%{transform:translateY(60px); opacity:0;}
+  70%{opacity:1;}
+  100%{transform:translateY(-10px); opacity:0;}
 }
 @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
-/* 头部导航栏 */
+/* 头部 */
 .header {
   background:var(--main); color:white; padding:24px 16px; text-align:center;
   position:relative; border-bottom-left-radius:32px; border-bottom-right-radius:32px;
@@ -113,7 +129,7 @@ body {
 .time { font-size:12px; margin-top:4px; opacity:0.9; }
 .music-btn { position:absolute; right:16px; top:50%; transform:translateY(-50%); }
 
-/* 主题切换弹窗 */
+/* 主题弹窗 */
 .theme-modal {
   position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4);
   display:none; align-items:center; justify-content:center; z-index:998;
@@ -133,7 +149,7 @@ body {
 .t1{background:#64a6ff;} .t2{background:#f89cc1;} .t3{background:#ab8ffb;} .t4{background:#ffb278;}
 .t5{background:#57d4ad;} .t6{background:#f9c880;} .t7{background:#6bd4e0;} .t8{background:#e57b8f;}
 
-/* 科目切换导航 */
+/* 导航 */
 .nav {
   display:flex; background:var(--card); margin:18px; border-radius:var(--card-radius);
   overflow:hidden; box-shadow:var(--shadow);
@@ -144,19 +160,20 @@ body {
 }
 .nav-item.active { background:var(--gray); color:var(--main); transform:scale(1.03); }
 
-/* 内容区域&科目板块主题背景 */
+/* 内容区域 */
 .content { padding:0 16px; }
 .page { display:none; }
 .page.show { display:block; animation:fadeIn 0.4s; }
+
+/* 科目一~四 主题背景色板块 */
 .card {
   background:var(--card); border-radius:var(--card-radius); padding:26px; margin-bottom:18px;
   box-shadow:var(--shadow); transition:var(--smooth); position:relative; overflow:hidden;
 }
-/* 科目专属侧边主题色条 */
-#page1 .card::before { background:#64a6ff; width:8px; content:''; position:absolute; top:0; left:0; height:100%; }
-#page2 .card::before { background:#ffb278; width:8px; content:''; position:absolute; top:0; left:0; height:100%; }
-#page3 .card::before { background:#57d4ad; width:8px; content:''; position:absolute; top:0; left:0; height:100%; }
-#page4 .card::before { background:#ab8ffb; width:8px; content:''; position:absolute; top:0; left:0; height:100%; }
+.card::before {
+  content:''; position:absolute; top:0; left:0; width:6px; height:100%;
+  background:var(--main);
+}
 .card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(0,0,0,0.1); }
 .card h3 { margin-bottom:16px; font-size:18px; }
 .countdown { color:#f43f5e; font-weight:600; margin:10px 0 16px; font-size:15px; }
@@ -165,11 +182,9 @@ body {
   line-height:1.6; margin-bottom:18px;
 }
 .note { font-size:15px; line-height:1.95; margin-top:8px; }
-/* 合格签字提示框 */
 .sign-tip {
-  margin-top:20px; padding:12px 16px; background:var(--sub);
+  margin-top:16px; padding:10px 14px; background:var(--sub);
   border-radius:12px; font-size:14px; color:var(--text); font-weight:500;
-  text-align:center;
 }
 .table {
   width:100%; border-collapse:collapse; margin:14px 0; font-size:13px;
@@ -177,7 +192,7 @@ body {
 .table th, .table td { border:1px solid #eee; padding:10px; text-align:center; }
 .table th { background:var(--gray); font-weight:600; }
 
-/* 底部版权 */
+/* 底部 */
 .footer {
   position:fixed; bottom:0; left:0; width:100%; background:var(--card);
   text-align:center; padding:14px; font-size:12px; color:#666;
@@ -185,341 +200,373 @@ body {
 }
 .footer span { color:var(--main); cursor:pointer; margin-left:6px; }
 
-/* AI智能客服 - 动态美观版 */
-.ai-float-btn {
-  position: fixed;
-  right: 18px;
-  bottom: 80px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--main);
-  color: #fff;
-  font-size: 24px;
-  border: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  cursor: pointer;
-  z-index: 99;
-  transition: all 0.3s ease;
-  animation: aiFloat 2s ease-in-out infinite;
+/* AI智能客服 */
+.ai-btn {
+  position:fixed; right:16px; bottom:80px; width:52px; height:52px;
+  border-radius:50%; background:var(--main); color:#fff; font-size:22px;
+  border:none; box-shadow:0 6px 16px rgba(0,0,0,0.15); cursor:pointer;
+  z-index:996; transition:var(--smooth);
 }
-@keyframes aiFloat {
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-5px);}
-  100%{transform:translateY(0);}
+.ai-btn:hover { transform:scale(1.1); }
+.ai-modal {
+  position:fixed; bottom:0; left:0; width:100%; height:85vh;
+  background:var(--card); border-radius:24px 24px 0 0;
+  box-shadow:0 -10px 30px rgba(0,0,0,0.1); z-index:997;
+  transform:translateY(100%); transition:0.4s ease-out; padding:24px;
 }
-.ai-float-btn:hover { transform: scale(1.1) translateY(0); }
-.ai-modal-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.ai-modal-wrap.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-.ai-box {
-  width: 92%;
-  max-width: 380px;
-  background: #fff;
-  border-radius: 24px 24px 0 0;
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.ai-modal-wrap.show .ai-box {
-  transform: translateY(0);
-}
+.ai-modal.show { transform:translateY(0); }
 .ai-header {
-  background: var(--main);
-  color: #fff;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  font-size: 16px;
+  font-size:18px; font-weight:600; color:var(--main); text-align:center; margin-bottom:20px;
 }
-.ai-close {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  transition: var(--smooth);
-}
-.ai-close:hover { transform:rotate(90deg); }
 .ai-chat {
-  height: 380px;
-  padding: 16px;
-  overflow-y: auto;
-  background: #f9f9f9;
+  height:calc(100% - 100px); overflow-y:auto; padding-right:8px;
 }
 .ai-bubble {
-  max-width: 78%;
-  padding: 12px 16px;
-  border-radius: 18px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  animation: aiBubble 0.3s ease forwards;
-}
-@keyframes aiBubble {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.ai-bot {
-  background: #fff;
-  color: #333;
-  border-bottom-left-radius: 6px;
-  margin-right: auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-.ai-user {
-  background: var(--main);
-  color: #fff;
-  border-bottom-right-radius: 6px;
-  margin-left: auto;
-}
-.ai-input-bar {
-  display: flex;
-  gap: 10px;
-  padding: 12px 14px;
-  background: #fff;
-  border-top: 1px solid #eee;
+  background:var(--gray); padding:12px 14px; border-radius:16px;
+  margin-bottom:12px; max-width:80%; font-size:14px;
 }
 .ai-input {
-  flex: 1;
-  padding: 12px 16px;
-  border-radius: 24px;
-  border: 1px solid #eee;
-  outline: none;
-  font-size: 14px;
-  transition: var(--smooth);
+  width:100%; padding:14px; border-radius:16px; border:1px solid #eee;
+  background:var(--bg); margin-top:12px; font-size:14px;
 }
-.ai-input:focus { border-color:var(--main); box-shadow:0 0 0 2px var(--sub); }
-.ai-send-btn {
-  padding: 0 20px;
-  border-radius: 24px;
-  background: var(--main);
-  color: #fff;
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: var(--smooth);
-}
-.ai-send-btn:hover { transform:scale(1.05); }
 
-/* 声明&作者弹窗 */
-.declare-modal, .author-modal {
+/* 声明弹窗 */
+.declare-modal {
   position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5);
   display:none; align-items:center; justify-content:center; z-index:997;
 }
-.declare-modal.show, .author-modal.show { display:flex; }
-.declare-box, .author-box {
+.declare-modal.show { display:flex; }
+.declare-box {
   width:90%; max-width:350px; background:var(--card); border-radius:var(--radius);
   padding:32px 26px; box-shadow:var(--shadow);
 }
 .declare-box p { font-size:15px; line-height:1.85; margin-bottom:10px; }
-.declare-btn, .author-btn {
+.declare-btn {
   margin-top:22px; width:100%; padding:16px; border-radius:14px; border:none;
-  background:var(--main); color:white; font-weight:600; cursor:pointer; transition:var(--smooth);
+  background:var(--main); color:white; font-weight:600; cursor:pointer;
 }
-.declare-btn:hover, .author-btn:hover { transform:scale(1.02);</style>
+
+/* 关于作者 */
+.author-modal {
+  position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5);
+  display:none; align-items:center; justify-content:center; z-index:997;
+}
+.author-modal.show { display:flex; }
+.author-box {
+  background:var(--card); border-radius:24px; padding:36px 30px;
+  width:90%; max-width:340px; text-align:center;
+}
+.author-box h3 { margin-bottom:16px; color:var(--main); }
+.author-box p { font-size:15px; line-height:1.8; margin-bottom:6px; }
+.author-btn {
+  margin-top:20px; padding:12px 24px; border-radius:14px; border:none;
+  background:var(--main); color:#fff; cursor:pointer;
+}
+</style>
+</head>
+
 <body class="theme-2">
-<!-- 登录提示框 --><div class="toast" id="toast"><!-- 成功<div class="success-fire" id="successFire">
- <div class="fire-text</div><!--<div class="login" id="<div class="login-cover"</div<input type="file" id="uploadCover" accept="image/*" style="display:none;"><div class="login-card">
-    <h2>旺娃子的驾考伴侣（测试</h2><div class="login-tip">默认账号：旺娃子　密码：88888</div>
-   <input type="text" id="user" placeholder="请输入账号" value="旺娃子">
-   <input type="password" id="pwd" placeholder="请输入密码">
-   <button class="login-btn" onclick="doLogin()"></button>
-</div>
- <div class="login-copy">版权所有© 2026 旺娃子的驾考伴侣 | 网页开发者：胡燚</div<!-- 主界面<div id="main" style="display:none;"><!-- 头部 --><div class="<div class="header-left">
-<button class="icon-btn" onclick="goBackLogin()" title="返回登录</button>
-<button class="icon-btn" onclick="openThemePanel()" title="切换主题</button>
-</div>
-    旺娃子的驾<div class="time" id="</div><button class="icon-btn music-btn" id="musicIcon" onclick="toggleMusic()" title="音乐</button>
+
+<!-- 提示框 -->
+<div class="toast" id="toast"></div>
+
+<!-- 成功上岸烟花 -->
+<div class="success-fire" id="successFire">
+  <div class="fire-text">成功上岸</div>
 </div>
 
- <!-- 主题切换弹窗 --><div class="theme-modal" id="theme<div class="theme-box">
-<h3>选择</h3><div class="theme-list">
-        <div class="theme-dot t1" onclick="set</div<div class="theme-dot t2 active" onclick="setTheme</div><div class="theme-dot t3" onclick="setTheme(3</div>
-       <div class="theme-dot t4" onclick="setTheme(4)"><div class="theme-dot t5" onclick="setTheme</div><div class="theme-dot t6" onclick="setTheme(6</div>
-       <div class="theme-dot t7" onclick="setTheme(7)"><div class="theme-dot t8" onclick="setTheme</div></div>
+<!-- 登录 -->
+<div class="login" id="login">
+  <div class="login-cover" id="coverBox"></div>
+  <input type="file" id="uploadCover" accept="image/*" style="display:none;">
+  <div class="login-card">
+    <h2>旺娃子的驾考伴侣（测试版）</h2>
+    <div class="login-tip">默认账号：旺娃子　密码：888888</div>
+    <input type="text" id="user" placeholder="请输入账号" value="旺娃子">
+    <input type="password" id="pwd" placeholder="请输入密码">
+    <button class="login-btn" onclick="doLogin()">登录进入</button>
+  </div>
+  <div class="login-copy">版权所有© 2026 旺娃子的驾考伴侣 | 网页开发者：胡燚</div>
 </div>
- <!-- 科目导航 -->
- <div class="nav"><div class="nav-item active" onclick="showPage(1)">科目</div>
-   <div class="nav-item" onclick="showPage(</div<div class="nav-item" onclick="showPage(3)">科目</div>
-   <div class="nav-item" onclick="showPage(</div</div><!-- 内容板块<div class<!-- 科目一 -->
-   <div class="page show" id="page1"><div class="<h3>科目一 · 道路交通安全法律、法规和</h3><div class="countdown" id="exam</div>
-       <div class="sms">
-@十堰郧县驾校-李旺：【湖北交警】您已成功预约十堰郧县金达考场04月07日郧县金达考场07:00至11:00的科目一考试，请携带身份证明按时参加考试。如有特殊情况，请提前一日申请取消</div<div class<strong>一、考试基本信息<br>
-• 题型：判断题40道 + 单选题60道，共100<br>
-• 满分100分，<br>
-• 考试时间：<br>
-<strong>二</strong<br>
-1. 道路交通安全法律、法规<br>
-2<br>
-3. 交通信号（交通信号灯、交通标志、交通标线、交警手势<br>
-4. 安全行车、文明<br>
-5. 机动车驾驶操作相关<br>
-6. 客车、货车、轮式专用机械车等车型<br<strong>三、</strong<br>
-• 身份证必须在有效期内，<br>
+
+<!-- 主界面 -->
+<div id="main" style="display:none;">
+  <div class="header">
+    <div class="header-left">
+      <button class="icon-btn" onclick="goBackLogin()" title="返回登录">←</button>
+      <button class="icon-btn" onclick="openThemePanel()" title="切换主题">🎨</button>
+    </div>
+    旺娃子的驾考伴侣
+    <div class="time" id="beijingTime"></div>
+    <button class="icon-btn music-btn" id="musicIcon" onclick="toggleMusic()" title="音乐">🎵</button>
+  </div>
+
+  <!-- 主题选择 -->
+  <div class="theme-modal" id="themeModal">
+    <div class="theme-box">
+      <h3>选择主题风格</h3>
+      <div class="theme-list">
+        <div class="theme-dot t1" onclick="setTheme(1)"></div>
+        <div class="theme-dot t2 active" onclick="setTheme(2)"></div>
+        <div class="theme-dot t3" onclick="setTheme(3)"></div>
+        <div class="theme-dot t4" onclick="setTheme(4)"></div>
+        <div class="theme-dot t5" onclick="setTheme(5)"></div>
+        <div class="theme-dot t6" onclick="setTheme(6)"></div>
+        <div class="theme-dot t7" onclick="setTheme(7)"></div>
+        <div class="theme-dot t8" onclick="setTheme(8)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="nav-item active" onclick="showPage(1)">科目一</div>
+    <div class="nav-item" onclick="showPage(2)">科目二</div>
+    <div class="nav-item" onclick="showPage(3)">科目三</div>
+    <div class="nav-item" onclick="showPage(4)">科目四</div>
+  </div>
+
+  <div class="content">
+    <!-- 科目一 -->
+    <div class="page show" id="page1">
+      <div class="card">
+        <h3>科目一 · 道路交通安全法律、法规和相关知识</h3>
+        <div class="countdown" id="examCount"></div>
+        <div class="sms">
+@十堰郧县驾校-李旺：【湖北交警】您已成功预约十堰郧县金达考场04月07日郧县金达考场07:00至11:00的科目一考试，请携带身份证明按时参加考试。如有特殊情况，请提前一日申请取消预约。
+        </div>
+        <div class="note">
+<strong>一、考试基本信息</strong><br>
+• 题型：判断题40道 + 单选题60道，共100题<br>
+• 满分100分，90分合格<br>
+• 考试时间：45分钟<br>
+<br>
+<strong>二、考试内容范围</strong><br>
+1. 道路交通安全法律、法规和规章<br>
+2. 地方性法规<br>
+3. 交通信号（交通信号灯、交通标志、交通标线、交警手势）<br>
+4. 安全行车、文明驾驶基础知识<br>
+5. 机动车驾驶操作相关基础知识<br>
+6. 客车、货车、轮式专用机械车等车型专用常识<br>
+<br>
+<strong>三、考前重点注意事项</strong><br>
+• 身份证必须在有效期内，过期不能参加考试<br>
 • 考试前一天不要熬夜，保证充足睡眠<br>
-• 提前确认考试费用已缴纳，<br>
-• 提前30分钟到达考场，完成签到<br>
-• 不得化浓妆、戴口罩、帽子<br><strong>四、禁止携带物品<br>
-• 禁止携带手机、智能手表、耳机、手环等<br>
-• 禁止携带纸张、笔记<br>
-• 禁止携带具有拍摄、存储、传输<br>
+• 提前确认考试费用已缴纳，未缴费无法入场<br>
+• 提前30分钟到达考场，完成签到、人脸识别、安检<br>
+• 不得化浓妆、戴口罩、帽子，保持面部清晰<br>
+<br>
+<strong>四、禁止携带物品</strong><br>
+• 禁止携带手机、智能手表、耳机、手环等电子设备<br>
+• 禁止携带纸张、笔记、资料、书籍等<br>
+• 禁止携带具有拍摄、存储、传输功能的设备<br>
 • 禁止携带零食、饮料、水杯进入考位<br>
-<strong>五、考场纪律<br>
-• 按分配座位就坐，核对信息无误再<br>
-• 答题提交后不可修改，<br>
-• 考试全程监控，严禁交头接耳、传递<br>
+<br>
+<strong>五、考场纪律</strong><br>
+• 按分配座位就坐，核对信息无误再开始<br>
+• 答题提交后不可修改，认真审题<br>
+• 考试全程监控，严禁交头接耳、传递信息<br>
 • 不合格可现场免费补考一次<br>
-• 合格后必须在电子成绩单签字<br>
-• 作弊一律取消成绩，按规定停考</div><div class="sign-tip">✅ 科目一考试合格后，需现场在电子成绩单签字确认，成绩方可生效</div</div><!-- 科目二<div class="page" id="page<div class="card">
-       <h3>科目二 · 场地驾驶技能考试</h3>
-       <div class="note"><strong>一、考试<br>
-• 满分100分，80<br>
-• 考试车型：C1<br>
-• 考试时间：按项目完成进度<br><strong>二、C1科目二五大项目<br>
-1<br>
-2. 侧方<br>
-3. 坡道定点停车和起步<br>
-4. <br>
-5<br><strong></strong<br>
-• 总分100分，80分及以上为<br>
-• 每个项目有单独扣分标准，累计扣分不超过2<br><strong>四、考前注意事项<br>
-• 上车后第一时间调整座椅、后视镜，系好<br>
-• 严格按照语音指令完成项目<br>
-• 全程控制车速，慢打方向，精准<br>
-• 项目之间可以停车调整状态，项目内禁止长时间</div><div class="sign-tip">✅ 科目二考试合格后，需现场签字确认，不</div</div></div>
+• 合格后必须在电子成绩单签字，否则成绩无效<br>
+• 作弊一律取消成绩，按规定停考处理
+        </div>
+        <div class="sign-tip">科目一考试合格后，需现场在电子成绩单签字确认。</div>
+      </div>
+    </div>
 
-<!-- 科目三 --><div class="page" id="page3<div class="card">
+    <!-- 科目二 -->
+    <div class="page" id="page2">
+      <div class="card">
+        <h3>科目二 · 场地驾驶技能考试</h3>
+        <div class="note">
+<strong>一、考试基本信息</strong><br>
+• 满分100分，80分合格<br>
+• 考试车型：C1<br>
+• 考试时间：（按项目完成）<br>
+<br>
+<strong>二、C1科目二五大项目</strong><br>
+1. 倒车入库<br>
+2. 侧方停车<br>
+3. 坡道定点停车和起步<br>
+4. 直角转弯<br>
+5. 曲线行驶<br>
+<br>
+<strong>三、合格标准</strong><br>
+• 总分100分，80分及以上为合格<br>
+• 每个项目有单独扣分标准，累计扣分不超过20分<br>
+<br>
+<strong>四、考前注意事项</strong><br>
+• 上车后调整座椅、后视镜，系好安全带<br>
+• 按语音指令完成项目，不要抢操作<br>
+• 控制车速，慢打方向，观察点位<br>
+• 项目之间可以停车调整，项目内禁止长时间停车
+        </div>
+        <div class="sign-tip">科目二考试合格后，需现场签字确认。</div>
+      </div>
+    </div>
+
+    <!-- 科目三 -->
+    <div class="page" id="page3">
+      <div class="card">
         <h3>科目三 · 道路驾驶技能考试</h3>
         <div class="note">
-<strong>一、考试基本<br>
-• 满分100分，90分<br>
-• 考试里程：C1车型<br>
+<strong>一、考试基本信息</strong><br>
+• 满分100分，90分合格<br>
+• 考试里程：C1不少于3公里<br>
 • 考试时间：约15-20分钟<br>
-<strong>二、C1</strong<br>
-1.<br>
-2. 夜间行驶（<br><br>
-4. 直线<br>
-5.<br>
+<br>
+<strong>二、C1科目三十六大项目</strong><br>
+1. 上车准备<br>
+2. 夜间行驶（模拟灯光）<br>
+3. 起步<br>
+4. 直线行驶<br>
+5. 加减挡位操作<br>
 6. 变更车道<br>
-7. 通过<br>
-8.<br>
-9. 路口右<br>
-10<br>
-11. 通过<br>
-1<br>
-13. <br>
-1<br>
+7. 通过路口<br>
+8. 路口左转弯<br>
+9. 路口右转弯<br>
+10. 通过人行横道线<br>
+11. 通过学校区域<br>
+12. 通过公共汽车站<br>
+13. 会车<br>
+14. 超车<br>
 15. 掉头<br>
-16.<br>
-<strong>三、模拟夜间灯光操作表<br>
-<em>模拟夜间灯光开始(每个指令在5秒内完成相应的灯光</em>
+16. 靠边停车<br>
+<br>
+<strong>三、模拟夜间灯光操作表</strong><br>
+<em>模拟夜间灯光开始(每个指令在5秒内完成相应的灯光操作)</em>
         </div>
         <table class="table">
-<thead>
-           <th>序号<th>语音<th></tr</thead><tbody>
-<td><td>请打开前照灯<td>近光灯</tr>
-<td><td>夜间同方向近距离跟车<td></tr>
-            <tr><td>3</td><td>夜间与机动车会<td></tr>
-            <tr><td>4</td><td>夜间通过有信号灯<td></tr>
-            <tr><td>5</td><td>夜间进入照明良好<td></tr>
-            <tr><td>6</td><td>夜间进入照明不良<td></tr>
-            <tr><td>7</td><td>夜间通过没有信号灯<td>远近光灯交替</td><tr</td<td>夜间超越前方<td>远近光灯交替</td><tr</td<td>夜间通过急<td>远近光灯交替</td><tr><td>10<td>夜间通过<td</td></tr>
-            <td>11<td>夜间<td</td></tr>
-            <td>12<td>夜间通过人行横道</td><td>远近光灯交替</tr>
-           <td>1<td>夜间在路边临时停车<td>小灯+警示灯</td></tbody</table><div class="<strong>四、合格标准</strong><br>
+          <thead>
+            <tr><th>序号</th><th>语言</th><th>操作</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>请打开前照灯</td><td>近光灯</td></tr>
+            <tr><td>2</td><td>夜间同方向近距离跟车行驶</td><td>近光灯</td></tr>
+            <tr><td>3</td><td>夜间与机动车会车</td><td>近光灯</td></tr>
+            <tr><td>4</td><td>夜间通过有信号灯路口</td><td>近光灯</td></tr>
+            <tr><td>5</td><td>夜间进入照明良好道路</td><td>近光灯</td></tr>
+            <tr><td>6</td><td>夜间进入照明不良道路</td><td>远光灯</td></tr>
+            <tr><td>7</td><td>夜间通过没有信号灯路口</td><td>远近光灯交替</td></tr>
+            <tr><td>8</td><td>夜间超越前方车辆</td><td>远近光灯交替</td></tr>
+            <tr><td>9</td><td>夜间通过急弯</td><td>远近光灯交替</td></tr>
+            <tr><td>10</td><td>夜间通过坡路</td><td>远近光灯交替</td></tr>
+            <tr><td>11</td><td>夜间通过拱桥</td><td>远近光灯交替</td></tr>
+            <tr><td>12</td><td>夜间通过人行横道</td><td>远近光灯交替</td></tr>
+            <tr><td>13</td><td>夜间在路边临时停车</td><td>小灯+警示灯</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+<strong>四、合格标准</strong><br>
 • 总分100分，90分及以上为合格<br>
-<strong>五、考前注意<br>
-• 上车先绕车一周检查车况，观察<br>
-• 灯光操作必须在5秒内完成，操作<br>
-• 起步、转弯、变道、超车需打转向灯，满3秒再<br>
-• 全程留意后视镜，避让<br>
-• 靠边停车距离马路边缘需控制在30cm以内，超出会扣分</div>
-<div class="sign-tip">✅ 科目三道路驾驶考试合格后，必须现场签字确认，</div></div>
-</div>
-
-   <!-- 科目四 -->
-<div class="page" id="page4"><div class="<h3>科目三 · 安全文明驾驶常识考试（</h3<div class<strong>一、考试基本信息<br>
-• 题型：判断题、单选题、多选题，共50<br>
-• 满分100分，<br>
-• 考试时间：<br>
-• 每题2分，错5题及以上直接<br><strong>二、考试<br>
-• 安全文明驾驶<br>
-• 恶劣气象和复杂道路条件下的安全驾驶知识<br>
-• 爆胎等紧急情况下的临<br>
-• 发生交通事故后的处置<br>
-• 违法行为综合判断与案例分析<br>
-<strong>三、合格标准<br>
-• 总分100分，90分及<br>
-• 多选题漏选、<br>
-• 考试不合格<br><strong>四、考前注意事项<br>
-• 认真审题，留意题干中的“错误”“不正确<br>
-• 多选题需全部选对，仔细排查选项<br>
-• 答题过程中可检查修改，<br>
-• 合格后签字确认，完成全部驾考流程等待领证
-        <div class="sign-tip">✅ 科目四考试合格后，现场签字确认，</div</div></div>
-</div>
-
- <!-- AI智能客服按钮 --><button class="ai-float-btn" onclick="openAI()">🤖<!-- AI智能客服窗口 -->
- <div class="ai-modal-wrap" id="aiModal<div class="ai-box">
-     <div class="ai-header<span>胡主人 · AI驾考</span>
-       <button class="ai-close" onclick="closeAI()"></button>
+<br>
+<strong>五、考前注意事项</strong><br>
+• 上车绕车一周检查车况，观察周围安全<br>
+• 灯光操作必须在5秒内完成，错一个直接不合格<br>
+• 起步、转弯、变道、超车必须打转向灯，满3秒再动方向<br>
+• 全程观察后视镜，注意行人和非机动车<br>
+• 靠边停车必须30cm以内，否则扣分
+        </div>
+        <div class="sign-tip">科目三考试合格后，需现场签字确认。</div>
       </div>
-      <div class="ai-chat" id="aiChat"><div class="ai-bubble ai-bot">你好～我是胡主人研发的智能驾考AI，可解答驾考全流程问题，也能为你介绍本网站</div></div>
-<div class="ai-input-bar">
-        <input type="text" class="ai-input" id="aiInput" placeholder="请输入问题，支持回车发送..." onkeydown="if(event.key=='Enter')sendAI()">
-        <button class="ai-send-btn" onclick="sendAI</button>
-</div>
     </div>
-  <!-- <div class="footer">
-    版权所有© 2026 胡燚 旺娃子的驾<span onclick="showDeclare()"></span>
-<span onclick="show</span</div><!-- 重要声明弹窗 -->
+
+    <!-- 科目四 -->
+    <div class="page" id="page4">
+      <div class="card">
+        <h3>科目三 · 安全文明驾驶常识考试（官方叫法）</h3>
+        <div class="note">
+<strong>一、考试基本信息</strong><br>
+• 题型：判断题、单选题、多选题，共50题<br>
+• 满分100分，90分合格<br>
+• 考试时间：45分钟<br>
+• 每题2分，错5题以上即不合格<br>
+<br>
+<strong>二、考试内容</strong><br>
+• 安全文明驾驶操作要求<br>
+• 恶劣气象和复杂道路条件下的安全驾驶知识<br>
+• 爆胎等紧急情况下的临危处置方法<br>
+• 发生交通事故后的处置知识<br>
+• 违法行为综合判断与案例分析<br>
+<br>
+<strong>三、合格标准</strong><br>
+• 总分100分，90分及以上为合格<br>
+• 多选题漏选、错选均不得分<br>
+• 考试不合格可当场补考一次<br>
+<br>
+<strong>四、考前注意事项</strong><br>
+• 认真审题，注意题干中的“错误”“不正确”等关键词<br>
+• 多选题需全部选对，漏选、错选均不得分<br>
+• 答题过程中可以检查修改，提交后不可修改<br>
+• 合格后签字确认，完成全部驾考流程
+        </div>
+        <div class="sign-tip">科目四考试合格后，需现场签字确认，等待领取驾驶证。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI客服按钮 -->
+  <button class="ai-btn" onclick="openAI()">🤖</button>
+
+  <!-- AI客服面板 -->
+  <div class="ai-modal" id="aiModal">
+    <div class="ai-header">AI 智能客服</div>
+    <div class="ai-chat" id="aiChat">
+      <div class="ai-bubble">你好呀～我是胡主人研发的驾考AI助手，有问题都可以问我哦！</div>
+    </div>
+    <input class="ai-input" id="aiInput" placeholder="输入你要问的问题..." onkeydown="if(event.key=='Enter')sendAI()">
+  </div>
+
+  <div class="footer">
+    版权所有© 2026 胡燚 旺娃子的驾考伴侣
+    <span onclick="showDeclare()">重要声明</span>
+    <span onclick="showAuthor()">关于作者</span>
+  </div>
+</div>
+
+<!-- 声明 -->
 <div class="declare-modal" id="declareModal">
-<div class="declare<h</h<p>1. 本网站仅为驾考学习展示使用，所提供内容仅供参考。<p>2. 相关考试政策、标准及要求，请以当地交管部门官方公告为准。</p>
-<p>3. 本网站内展示的短信、通知等均为模拟演示，不代表官方文件。<p>4. 未经许可，任何单位及个人不得复制、分发或用于商业用途。<p>5. 用户使用本网站即视为已阅读并同意本声明全部条款。<p>6. 本网站研发由胡燚专业定制，版权所有，侵权必究。<button class="declare-btn" onclick="closeDeclare()">我</button</div><!-- 关于作者弹窗 -->
+  <div class="declare-box">
+    <h3>重要声明</h3>
+<p>1. 本网站仅为驾考学习展示使用，所提供内容仅供参考。</p>
+<p>2. 相关考试政策、标准及要求，请以当地交管部门官方公告为准。</p>
+<p>3. 本网站内展示的短信、通知等均为模拟演示，不代表官方文件。</p>
+<p>4. 未经许可，任何单位及个人不得复制、分发或用于商业用途。</p>
+<p>5. 用户使用本网站即视为已阅读并同意本声明全部条款。</p>
+<p>6. 本网站研发由胡燚等团队成员专业定制，版权所有，侵权必究。</p>
+    <button class="declare-btn" onclick="closeDeclare()">我已阅读并同意</button>
+  </div>
+</div>
+
+<!-- 关于作者 -->
 <div class="author-modal" id="authorModal">
-<div class="author<h</h3>
+  <div class="author-box">
+    <h3>关于作者</h3>
     <p>网站专业定制化开发</p>
-    <p>投稿QQ：2997054180（胡先生</p>
-   <button class="author-btn" onclick="closeAuthor()"></button>
- </div<audio id="bgMusic" loop>
-<source src="张碧晨-众里寻他千百度.mp3" type="audio/mp3<script>
-// 封面更换
+    <p>投稿QQ：2997054180（胡先生）</p>
+    <button class="author-btn" onclick="closeAuthor()">确定</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="张碧晨-众里寻他千百度.mp3" type="audio/mp3">
+
+<script>
+// 封面
 document.getElementById('coverBox').onclick = ()=>{document.getElementById('uploadCover').click()};
 document.getElementById('uploadCover').onchange = e=>{
   let f = e.target.files[0];
   if(f) document.getElementById('coverBox').style.backgroundImage = `url(${URL.createObjectURL(f)})`;
 };
 
-// 登录提示框
+// 提示框
 function showTip(text){
   let t = document.getElementById('toast');
   t.innerText = text;
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 1800);
+  setTimeout(()=>t.classList.remove('show'), 1600);
 }
 
-// 登录验证
+// 登录
 function doLogin(){
   let u = document.getElementById('user').value.trim();
   let p = document.getElementById('pwd').value.trim();
@@ -528,13 +575,12 @@ function doLogin(){
   if(u === '旺娃子' && p === '888888'){
     document.getElementById('login').style.display = 'none';
     document.getElementById('main').style.display = 'block';
-    // 成功上岸烟花效果
     setTimeout(()=>{
       document.getElementById('successFire').classList.add('show');
-      setTimeout(()=>document.getElementById('successFire').classList.remove('show'), 2000);
-    },400);
-    setTimeout(showDeclare, 800);
-    setTimeout(autoMusic, 1200);
+      setTimeout(()=>document.getElementById('successFire').classList.remove('show'), 1800);
+    },300);
+    setTimeout(showDeclare, 600);
+    setTimeout(autoMusic, 900);
   }else{
     showTip('❌ 账号或密码错误');
   }
@@ -547,7 +593,7 @@ function goBackLogin(){
   document.getElementById('bgMusic').pause();
 }
 
-// 主题切换
+// 主题
 function openThemePanel(){ document.getElementById('themeModal').classList.add('show') }
 function setTheme(n){
   document.body.className = 'theme-'+n;
@@ -557,7 +603,7 @@ function setTheme(n){
   document.getElementById('themeModal').classList.remove('show');
 }
 
-// 北京时间实时更新
+// 时间
 function updateTime(){
   let d = new Date();
   let y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,0), day = String(d.getDate()).padStart(2,0);
@@ -566,24 +612,25 @@ function updateTime(){
 }
 setInterval(updateTime,1000); updateTime();
 
-// 考试倒计时
+// 倒计时
 function examCount(){
   let end = new Date('2026-04-07 07:00:00');
   let now = new Date();
-  let diff = end - now;<=0){ document.getElementById('examCount').innerText = '考试已结束'; return; }
+  let diff = end - now;
+  if(diff <=0){ document.getElementById('examCount').innerText = '考试已结束'; return; }
   let day = Math.floor(diff/86400000), h = Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
   document.getElementById('examCount').innerText = `距离20260407考试：${day}天 ${h}时 ${m}分 ${s}秒`;
 }
 setInterval(examCount,1000); examCount();
 
-// 科目页面切换
+// 切换页面
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
   document.getElementById('page'+n).classList.add('show');
   document.querySelectorAll('.nav-item').forEach((i,k)=>i.classList.toggle('active',k===n-1));
 }
 
-// 背景音乐
+// 音乐
 let audio = document.getElementById('bgMusic');
 let isPlay = false;
 let musicIcon = document.getElementById('musicIcon');
@@ -595,64 +642,35 @@ function toggleMusic(){
   isPlay = !isPlay;
 }
 
-// 声明弹窗
+// 声明
 function showDeclare(){ document.getElementById('declareModal').classList.add('show') }
 function closeDeclare(){ document.getElementById('declareModal').classList.remove('show') }
 
-// 作者弹窗
+// 作者
 function showAuthor(){ document.getElementById('authorModal').classList.add('show') }
 function closeAuthor(){ document.getElementById('authorModal').classList.remove('show') }
 
-// AI智能客服 - 升级版（含网站功能介绍）
-function openAI() {
-  document.getElementById('aiModal').classList.add('show');
-}
-function closeAI() {
-  document.getElementById('aiModal').classList.remove('show');
-}
-function sendAI() {
-  const input = document.getElementById('aiInput');
-  const text = input.value.trim();
-  if (!text) return;
-
-  const chat = document.getElementById('aiChat');
-  chat.innerHTML<div class="ai-bubble ai-user">${</div>`;
-  input.value = '';
-  chat.scrollTop = chat.scrollHeight;
-
-  // 智能回复逻辑
-  setTimeout(() => {
+// AI客服
+function openAI(){ document.getElementById('aiModal').classList.add('show') }
+function sendAI(){
+  let i = document.getElementById('aiInput');
+  let v = i.value.trim();
+  if(!v) return;
+  let chat = document.getElementById('aiChat');
+  chat.innerHTML += `<div class="ai-bubble" style="margin-left:auto; background:var(--sub);">${v}</div>`;
+  i.value = '';
+  setTimeout(()=>{
     let ans = '';
-    const t = text.toLowerCase();
-
-    // 网站功能介绍
-    if (t.includes('网站功能') || t.includes('平台功能') || t.includes('这个网站') || t.includes('能干什么')) {
-      ans = `本网站是胡主人研发的旺娃子驾考伴侣，核心功能有：1.科目一至科目四全流程考试内容详解，包含合格标准、注意事项、操作技巧；2.实时考试倒计时提醒；3.8种主题风格自由切换，视觉更舒适；4.登录验证功能，保障使用权限；5.模拟驾考通知展示，提前熟悉考试流程；6.专属AI智能客服，全程解答驾考疑问，助力大家顺利驾考上岸！`;
-    }
-    // 科目相关疑问
-    else if (t.includes('科目一') || t.includes('科一'))
-      ans = '科目一考交通法规、信号灯、交警手势等理论知识，满分100分，90分合格，考试需带有效身份证，合格后务必现场签字哦～';
-    else if (t.includes('科目二') || t.includes('科二'))
-      ans = '科目二是场地技能考试，包含倒车入库、侧方停车等5个项目，80分合格，考试要慢稳对准点位，合格后必须现场签字确认成绩';
-    else if (t.includes('科目三') || t.includes('科三'))
-      ans = '科目三分为路考和灯光模拟，90分合格，灯光操作要快准，转向灯需满3秒，靠边停车30cm以内，合格后现场签字';
-    else if (t.includes('科目四') || t.includes('科四'))
-      ans = '科目四是安全文明常识考试，50道题含多选题，90分合格，考完签字就能等着拿驾驶证啦';
-    // 签字相关
-    else if (t.includes('签字') || t.includes('签名'))
-      ans = '科目一、二、三、四考试合格后，都必须现场在成绩单签字确认，不签字的话成绩会无效，一定要记得哦';
-    // 研发者相关
-    else if (t.includes('胡主人') || t.includes('作者') || t.includes('研发'))
-      ans = '我是由胡主人精心研发的智能驾考AI，整个驾考伴侣网站也都是胡主人专属定制开发的，专为驾考考生服务';
-    // 鼓励话术
-    else if (t.includes('加油') || t.includes('必过') || t.includes('上岸'))
-      ans = '加油！放平心态认真备考，你一定能一次通过所有科目，成功上岸拿驾照！';
-    // 通用回复
-    else
-      ans = '我是胡主人研发的AI驾考助手，你可以问我科目一到四考试内容、合格标准、签字要求，也可以随时咨询本网站功能哦';
-
-    chat.innerHTML +=<div class="ai-bubble ai-bot">${</div>`;
+    if(/科目一|科一/.test(v)) ans = '科目一考法规和信号灯，90分合格，考完记得签字哦～';
+    else if(/科目二|科二/.test(v)) ans = '科目二五项，80分合格，慢点开准点位，合格要签字';
+    else if(/科目三|科三/.test(v)) ans = '科目三道路驾驶，90分合格，灯光别错，合格签字';
+    else if(/科目四|科四/.test(v)) ans = '科目四考文明安全，90分合格，多选题仔细，合格签字领证';
+    else if(/胡主人|作者/.test(v)) ans = '我是胡主人精心研发的AI驾考助手，专门为你服务哒';
+    else ans = '我是胡主人研发的驾考AI，你可以问我科目一到四相关问题哦';
+    chat.innerHTML += `<div class="ai-bubble">${ans}</div>`;
     chat.scrollTop = chat.scrollHeight;
-  }, 700);
+  },600);
+}
 </script>
+</body>
 </html>
